@@ -8,6 +8,6 @@ export class Event {
     public endDate: string;
     public description: string;
 
-    public startDateTime: Date;
-    public endDateTime: Date;
+    public startDateTime: string;
+    public endDateTime: string;
 }
