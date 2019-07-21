@@ -1,0 +1,12 @@
+.app-event-list {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    max-width: 100%;
+
+    .app-event-element {
+        flex: 1 0 auto;
+        margin: 5px 10px;
+        border: 1px solid #acacac;
+    }
+}

@@ -1,0 +1,42 @@
+.app-event-detail {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .app-event-detail-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+        padding: 5px 0;
+        span {
+            padding: 0 5px;
+        }
+        img {
+            padding: 5px 0;
+        }
+    }
+
+    button {
+        border: none;
+        height: 40px;
+        background-color: #008cba;
+        color: white;
+        outline: none;
+        &:hover {
+            cursor: pointer;
+            background-color: #87ceeb;
+            color: black;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .app-event-detail {
+        .app-detail-description {
+            display: none;
+        }
+    }
+  }

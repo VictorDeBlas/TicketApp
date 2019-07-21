@@ -1,5 +1,6 @@
-import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../api/events.service';
+import { Event } from '../model/event'
 
 @Component({
   selector: 'app-events-list',
@@ -18,8 +19,7 @@ export class EventsListComponent implements OnInit {
 
   private getEventsList(): void {
     this.eventsApi.getEventsList()
-      .subscribe( list => {
-        console.log(list); this.eventList = list});
+      .subscribe( list => this.eventList = list);
   }
 
 }

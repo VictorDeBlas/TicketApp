@@ -7,4 +7,7 @@ export class Event {
     public startDate: string;
     public endDate: string;
     public description: string;
+
+    public startDateTime: Date;
+    public endDateTime: Date;
 }

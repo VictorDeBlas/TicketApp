@@ -1,3 +1,5 @@
-<div *ngFor="let event of eventList">
-    <span>{{event.title}}</span>
+<div class="app-event-list">
+    <div *ngFor="let event of eventList" class="app-event-element">
+        <app-event [event]="event"></app-event>
+    </div>
 </div>
