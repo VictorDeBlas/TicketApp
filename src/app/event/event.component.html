@@ -1,7 +1,7 @@
 <div class="app-event-detail">
     <div class="app-event-detail-info">
-        <span>{{event.title}}</span>
-        <span>{{event.subtitle}}</span>
+        <span class="app-detail-title">{{event.title}}</span>
+        <span class="app-detail-subtitle">{{event.subtitle}}</span>
         <img [src]="event.image">
         <span>{{event.startDateTime | date: 'dd/MM/yyyy'}} - {{event.endDateTime | date: 'dd/MM/yyyy'}}</span>
         <span class="app-detail-description">{{event.description}}</span>
