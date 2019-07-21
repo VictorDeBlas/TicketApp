@@ -4,7 +4,7 @@
         <span class="app-detail-subtitle">{{event.subtitle}}</span>
         <img [src]="event.image">
         <span>{{event.startDateTime | date: 'dd/MM/yyyy'}} - {{event.endDateTime | date: 'dd/MM/yyyy'}}</span>
-        <span class="app-detail-description">{{event.description}}</span>
+        <div class="app-detail-description" [innerHtml]="event.description"></div>
     </div>
     <button (click)="openSessionDetail()">Comprar</button>
 </div>
