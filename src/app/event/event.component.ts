@@ -27,13 +27,8 @@ export class EventComponent implements OnInit, OnChanges {
   }
 
   private convertTimeToDate(): void {
-    this.event.startDateTime = this.convertDateToFormat(new Date(parseInt(this.event.startDate, 10)));
-    this.event.endDateTime = this.convertDateToFormat(new Date(parseInt(this.event.endDate, 10)));
-  }
-
-  private convertDateToFormat(date: Date): string {
-    function pad(s) { return (s < 10) ? '0' + s : s; }
-    return [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('/');
+    this.event.startDateTime = new Date(parseInt(this.event.startDate, 10));
+    this.event.endDateTime = new Date(parseInt(this.event.endDate, 10));
   }
 
 }
