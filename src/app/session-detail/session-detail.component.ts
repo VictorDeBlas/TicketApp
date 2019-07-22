@@ -1,6 +1,8 @@
+import { SessionInfo } from './../model/session-info';
+import { Session } from './../model/session';
 import { SessionService } from './../api/session.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-session-detail',
@@ -9,19 +11,43 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SessionDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, protected sessionApi: SessionService) { }
+  public session: Session
+
+  constructor(private route: ActivatedRoute, protected sessionApi: SessionService, protected router: Router) { }
 
   ngOnInit() {
     this.getSessionInfo();
   }
 
+  public returnToList(): void {
+    this.router.navigateByUrl('');
+  }
+
+  public decrement(session: SessionInfo): void {
+    session.selectedTickets = session.selectedTickets - 1;
+  }
+
+  public increment(session: SessionInfo): void {
+    session.selectedTickets = session.selectedTickets + 1;
+  }
+
   private getSessionInfo(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    console.log(id);
     this.sessionApi.getSessionById(id)
       .subscribe(
-        sessionInfo => console.log(sessionInfo),
+        sessionInfo => this.sortSessionsAndAssign(sessionInfo),
         error => console.log(error));
+  }
+
+  private sortSessionsAndAssign(session: Session): void {
+    session.sessionsList.sort( (a: SessionInfo, b: SessionInfo) => {
+      if ( a.date < b.date ) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+    this.session = session;
   }
 
 }

@@ -1,8 +1,9 @@
 <div class="app-event-detail">
     <div class="app-event-detail-info">
-        <span class="app-detail-title">{{event.title}}</span>
-        <span class="app-detail-subtitle">{{event.subtitle}}</span>
-        <img [src]="event.image">
+        <span class="app-detail-title" (click)="openSessionDetail()">{{event.title}}</span>
+        <span class="app-detail-subtitle" (click)="openSessionDetail()">{{event.subtitle}}</span>
+        <img (click)="openSessionDetail()" [src]="event.image">
+        <span>{{event.place}}</span>
         <span>{{event.startDateTime | date: 'dd/MM/yyyy'}} - {{event.endDateTime | date: 'dd/MM/yyyy'}}</span>
         <div class="app-detail-description" [innerHtml]="event.description"></div>
     </div>

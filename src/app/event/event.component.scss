@@ -12,10 +12,16 @@
             color: #0091c2;
             font-weight: bold;
             padding: 5px 5px 15px;
+            &:hover {
+                cursor: pointer;
+            }
         }
         .app-detail-subtitle {
             color: #0091c2;
             font-size: 14px;
+            &:hover {
+                cursor: pointer;
+            }
         }
         div,
         span {
@@ -23,22 +29,9 @@
         }
         img {
             padding: 5px 0;
-        }
-    }
-
-    button {
-        border: none;
-        height: 40px;
-        background-color: #008cba;
-        color: white;
-        outline: none;
-        &:hover {
-            cursor: pointer;
-            background-color: #87ceeb;
-            color: black;
-        }
-        &:focus {
-            outline: none;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }

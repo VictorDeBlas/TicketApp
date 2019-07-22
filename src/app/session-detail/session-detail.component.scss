@@ -1,0 +1,65 @@
+.app-session-detail {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    padding: 10px;
+
+    .app-button-return {
+        width: 200px;
+        height: 40px;
+        border-radius: 3px;
+    }
+
+    .app-session-detail-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+        margin-top: 20px;
+
+        .app-session-detail-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0091c2;
+        }
+
+        .app-session-detail-subtitle {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #0091c2;
+        }
+
+        .app-session-info-list {
+            margin-top: 10px;
+
+            .app-session-info-row {
+                display: flex;
+                align-items: center;
+                padding: 5px;
+
+                .app-session-date-availability {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1 0 auto;
+                }
+
+                .app-session-controls {
+                    display: flex;
+                    flex: 1 0 auto;
+                    align-items: center;
+                    justify-content: center;
+                    button {
+                        background-color: transparent;
+                        color: #0091c2;
+                        width: 60px;
+                        font-size: 25px;
+                    }
+                    span {
+                        display: flex;
+                        justify-content: center;
+                        flex: 1 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}

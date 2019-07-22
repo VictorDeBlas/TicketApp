@@ -1,1 +1,20 @@
-<p>session-detail works!</p>
+<div *ngIf="session" class="app-session-detail">
+    <button (click)="returnToList()" class="app-button-return">Volver</button>
+    <div class="app-session-detail-container">
+        <span class="app-session-detail-title">{{session.event.title}}</span>
+        <span class="app-session-detail-subtitle">{{session.event.subtitle}}</span>
+        <div class="app-session-info-list">
+            <div *ngFor="let currentSession of session.sessionsList" class="app-session-info-row">
+                <div class="app-session-date-availability">
+                    <span class="app-session-date">Fecha: {{currentSession.dateTime | date: 'dd/MM/yyyy'}}</span>
+                    <span class="app-session-availability">Disponibilidad: {{currentSession.availability}}</span>
+                </div>
+                <div class="app-session-controls">
+                    <button (click)="decrement(currentSession)" [disabled]="currentSession.selectedTickets===0">-</button>
+                    <span>{{currentSession.selectedTickets}}</span>
+                    <button (click)="increment(currentSession)" [disabled]="currentSession.selectedTickets===currentSession.availability">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

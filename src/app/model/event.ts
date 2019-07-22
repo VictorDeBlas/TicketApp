@@ -10,4 +10,10 @@ export class Event {
 
     public startDateTime: Date;
     public endDateTime: Date;
+
+    constructor(obj?: any) {
+        Object.assign(this, obj);
+        this.startDateTime = new Date(parseInt(this.startDate, 10));
+        this.endDateTime = new Date(parseInt(this.endDate, 10));
+    }
 }
