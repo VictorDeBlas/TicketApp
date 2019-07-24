@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { EventsListComponent } from './events-list/events-list.component';
 import { EventComponent } from './event/event.component';
 import { SessionDetailComponent } from './session-detail/session-detail.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventsListComponent,
     EventComponent,
-    SessionDetailComponent
+    SessionDetailComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

@@ -21,24 +21,25 @@ html {
                 flex: 1 0 auto;
                 margin-top: 10px;
                 margin-bottom: 10px;
+            }
 
-                button {
-                    border: none;
-                    height: 40px;
-                    background-color: #008cba;
-                    color: white;
+            button {
+                border: none;
+                height: 40px;
+                background-color: #008cba;
+                color: white;
+                outline: none;
+                &:hover {
+                    cursor: pointer;
+                    background-color: #87ceeb;
+                    color: black;
+                    border: 1px solid #008cba;
+                }
+                &:focus {
                     outline: none;
-                    &:hover {
-                        cursor: pointer;
-                        background-color: #87ceeb;
-                        color: black;
-                    }
-                    &:focus {
-                        outline: none;
-                    }
-                    &:disabled {
-                        cursor: not-allowed;
-                    }
+                }
+                &:disabled {
+                    cursor: not-allowed;
                 }
             }
         }

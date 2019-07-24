@@ -1,6 +1,6 @@
-<div *ngIf="session" class="app-session-detail">
+<div class="app-session-detail">
     <button (click)="returnToList()" class="app-button-return">Volver</button>
-    <div class="app-session-detail-container">
+    <div *ngIf="session" class="app-session-detail-container">
         <span class="app-session-detail-title">{{session.event.title}}</span>
         <span class="app-session-detail-subtitle">{{session.event.subtitle}}</span>
         <div class="app-session-info-list">
@@ -16,5 +16,9 @@
                 </div>
             </div>
         </div>
+        <button class="app-button-add-to-cart" (click)="addToCart()">Añadir al carrito</button>
+    </div>
+    <div *ngIf="!session" class="app-session-no-info">
+        EVENT INFO NOT FOUND
     </div>
 </div>

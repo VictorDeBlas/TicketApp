@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './../shopping-cart/shopping-cart.service';
 import { SessionInfo } from './../model/session-info';
 import { Session } from './../model/session';
 import { SessionService } from './../api/session.service';
@@ -13,7 +14,10 @@ export class SessionDetailComponent implements OnInit {
 
   public session: Session
 
-  constructor(private route: ActivatedRoute, protected sessionApi: SessionService, protected router: Router) { }
+  constructor(private route: ActivatedRoute, 
+              protected sessionApi: SessionService, 
+              protected router: Router, 
+              public shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
     this.getSessionInfo();
@@ -29,6 +33,10 @@ export class SessionDetailComponent implements OnInit {
 
   public increment(session: SessionInfo): void {
     session.selectedTickets = session.selectedTickets + 1;
+  }
+
+  public addToCart(): void {
+      this.shoppingCartService.updateCart(this.session);
   }
 
   private getSessionInfo(): void {

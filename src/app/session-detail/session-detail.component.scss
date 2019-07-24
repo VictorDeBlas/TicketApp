@@ -4,12 +4,18 @@
     flex-direction: column;
     padding: 10px;
 
-    .app-button-return {
+    button,
+     .app-button-return {
         width: 200px;
         height: 40px;
         border-radius: 3px;
     }
 
+    .app-button-add-to-cart {
+        margin-left: auto;
+    }
+
+    .app-session-no-info,
     .app-session-detail-container {
         display: flex;
         flex-direction: column;
