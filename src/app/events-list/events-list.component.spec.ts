@@ -1,6 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventsListComponent } from './events-list.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('EventsListComponent', () => {
   let component: EventsListComponent;
@@ -8,7 +10,9 @@ describe('EventsListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventsListComponent ]
+      declarations: [ EventsListComponent ],
+      imports: [HttpClientModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));

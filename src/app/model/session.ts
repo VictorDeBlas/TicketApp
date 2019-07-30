@@ -6,6 +6,7 @@ export class Session {
     public sessionsList: Array<SessionInfo> = [];
 
     constructor(obj?: any) {
+      if ( obj ) {
         this.event = new Event(obj.event);
         obj.sessions.forEach( session => this.sessionsList.push(new SessionInfo(session)));
         obj.sessions.sort((a, b) => {
@@ -15,5 +16,6 @@ export class Session {
               return 1;
             }
           });
+      } 
     }
 }

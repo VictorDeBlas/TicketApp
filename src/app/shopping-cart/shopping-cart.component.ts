@@ -19,9 +19,9 @@ export class ShoppingCartComponent{
 
   constructor(public shoppingCartService: ShoppingCartService, private eRef: ElementRef) {}
 
-  public removeItemFromCart(currentSession, tickets: TicketsInCart): void {
-    this.shoppingCartService.removeFromCart(currentSession.key, tickets.id);
-
+  public removeItemFromCart(event: MouseEvent, currentSession: string, tickets: TicketsInCart): void {
+    event.stopPropagation();
+    this.shoppingCartService.removeFromCart(currentSession, tickets.id);
   }
 
   public toggleCart(): void {

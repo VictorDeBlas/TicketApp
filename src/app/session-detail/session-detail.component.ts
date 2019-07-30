@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SessionDetailComponent implements OnInit {
 
-  public session: Session
+  public session: Session;
 
   constructor(private route: ActivatedRoute, 
               protected sessionApi: SessionService, 

@@ -3,14 +3,11 @@ header {
     height: 60px;
     box-shadow: 0 4px 2px -2px gray;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     position: relative;
     span {
         color: white;
-        display: flex;
-        align-content: center;
-        justify-content: center;
     }
     app-shopping-cart {
         position: absolute;

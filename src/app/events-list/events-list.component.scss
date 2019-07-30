@@ -3,6 +3,7 @@
     flex: 1 0 auto;
     flex-direction: column;
     max-width: 100%;
+    justify-content: center;
 
     .app-event-element {
         flex: 1 0 auto;
@@ -17,8 +18,14 @@
         flex-direction: row;
         flex-wrap: wrap;
         .app-event-element {
-            height: 550px;
-            max-width: 50%;
+            margin:10px;
+            flex: 1;
+            &:nth-child(even) {
+                margin-left: 5px;
+            }
+            &:nth-child(odd) {
+                margin-right: 5px;
+            }
         }
     }
 }
