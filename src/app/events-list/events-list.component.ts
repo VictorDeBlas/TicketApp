@@ -18,14 +18,8 @@ export class EventsListComponent implements OnInit {
   }
 
   private getEventsList(): void {
-    this.eventsApi.getEventsList()
-      .subscribe( list => this.eventList = list.sort((a: Event, b: Event) => { 
-        if ( a.endDate < b.endDate) {
-          return -1;
-        } else {
-          return 1;
-        }
-      }));
+    this.eventsApi.getEvents()
+      .subscribe(list => this.eventList = list);
   }
 
 }

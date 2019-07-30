@@ -11,7 +11,7 @@ export class SessionService {
 
   constructor(protected httpClient: HttpClient) { }
 
-  public getSessionById(id: number): Observable<Session> {
+  public getEventInfo(id: number): Observable<Session> {
     return this.httpClient.get<Session>('../../assets/event-info-' + id + '.json')
     .pipe(
       map(res => new Session(res))

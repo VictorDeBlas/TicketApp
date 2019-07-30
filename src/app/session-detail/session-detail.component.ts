@@ -41,21 +41,10 @@ export class SessionDetailComponent implements OnInit {
 
   private getSessionInfo(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.sessionApi.getSessionById(id)
+    this.sessionApi.getEventInfo(id)
       .subscribe(
-        sessionInfo => this.sortSessionsAndAssign(sessionInfo),
+        sessionInfo => this.session = sessionInfo,
         error => console.log(error));
-  }
-
-  private sortSessionsAndAssign(session: Session): void {
-    session.sessionsList.sort( (a: SessionInfo, b: SessionInfo) => {
-      if ( a.date < b.date ) {
-        return -1;
-      } else {
-        return 1;
-      }
-    });
-    this.session = session;
   }
 
 }

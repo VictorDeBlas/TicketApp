@@ -69,3 +69,12 @@
         }
     }
 }
+
+@media (max-width: 550px) {
+    .app-session-detail {
+       button,
+       .app-button-return {
+           width: 120px;
+        }
+    }
+}

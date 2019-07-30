@@ -8,5 +8,17 @@
         flex: 1 0 auto;
         margin: 5px 10px;
         border: 1px solid #acacac;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .app-event-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        .app-event-element {
+            height: 550px;
+            max-width: 50%;
+        }
     }
 }

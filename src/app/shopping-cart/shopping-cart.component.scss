@@ -1,6 +1,6 @@
 .app-shopping-cart {
     .app-shopping-cart-button {
-        width: 200px;
+        width: 40px;
         height: 40px;
         border-radius: 3px;
     }
@@ -13,11 +13,16 @@
         background-color: white;
         right: 0;
         padding: 10px;
+        overflow: auto;
         &.app-cart-opened {
             display: block;
         }
         &.app-cart-closed {
             display: none;
+        }
+        .app-empty-shopping-cart {
+            text-align: center;
+            margin-top: 20px;
         }
         .app-cart-item{
             margin-bottom: 10px;
@@ -28,18 +33,27 @@
             }
             .app-cart-item-session-list {
                 display: flex;
-                .app-cart-item-session-date {
-                    
-                }
-                .app-cart-item-session-selected-tickest {
+                margin-top: 5px;
 
+                .app-cart-item-session-date {
+                    flex: 1 0 auto;
                 }
                 .app-cart-item-trash-icon {
+                    height: 18px;
+                    margin: 0 10px 0 20px;
                     &:hover {
                         cursor: pointer;
                     }
                 }
             }
+        }
+    }
+}
+
+@media (min-width: 550px) {
+    .app-shopping-cart {
+        .app-shopping-cart-button {
+            width: 200px;
         }
     }
 }
